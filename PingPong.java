@@ -4,7 +4,7 @@ class Shared{
 
   public synchronized void printPing(){
     try{
-    if(!pingTurn){
+    while(!pingTurn){
       wait();
     }
 
@@ -25,7 +25,7 @@ class Shared{
 
   public synchronized void printPong(){
     try{
-    if(pingTurn){
+    while(pingTurn){
       wait();
     }
 
